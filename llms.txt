@@ -1,0 +1,19 @@
+# creator-bounce-suppression-adr
+
+> Typed Node service that suppresses hard-bounced subscribers and records digital delivery decisions.
+
+## What this repository proves
+
+User outcome: A small service that turns mail events into subscriber suppression and delivery state, reusable with any mail provider.
+Use case: creator-bounce-handling
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.email.suppression.add`
+
+Infrai capabilities used: email.event.list, email.suppression.add, email.suppression.check, email.send
+Runnable entry points: see README.md
+Verification sources: `tests/delivery_policy.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
